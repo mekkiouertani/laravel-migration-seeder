@@ -12,6 +12,7 @@
                         <th scope="col">Partenza</th>
                         <th scope="col">Arrivo</th>
                         <th scope="col">Binario</th>
+                        <th scope="col">Giorno di Partenza</th>
                         <th scope="col">Orario Partenza</th>
                         <th scope="col">Orario Arrivo</th>
                         <th scope="col">Codice Treno</th>
@@ -27,6 +28,7 @@
                             <td>{{ $train->departure_station }}</td>
                             <td>{{ $train->arrival_station }}</td>
                             <td>{{ $train->train_track }}</td>
+                            <td>{{ substr($train->departure_day, 0, 10) }}</td>
                             <td>{{ substr($train->departure_time, 0, 5) }}</td>
                             <td>{{ substr($train->arrival_time, 0, 5) }}</td>
                             <td>{{ $train->train_code }}</td>

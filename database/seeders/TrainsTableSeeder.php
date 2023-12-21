@@ -29,7 +29,7 @@ class TrainsTableSeeder extends Seeder
             $newTrain->carriages_count = $faker->numberBetween(1, 20);
             $newTrain->on_time = $faker->numberBetween(0, 1);
             $newTrain->canceled = $faker->numberBetween(0, 1);
-
+            $newTrain->departure_day = $faker->dateTimeBetween('-1 week', '+1 week');
             $newTrain->save();
         }
     }
