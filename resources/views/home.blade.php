@@ -27,12 +27,15 @@
                             <td>{{ $train->departure_station }}</td>
                             <td>{{ $train->arrival_station }}</td>
                             <td>{{ $train->train_track }}</td>
-                            <td>{{ $train->departure_time }}</td>
-                            <td>{{ $train->arrival_time }}</td>
+                            <td>{{ substr($train->departure_time, 0, 5) }}</td>
+                            <td>{{ substr($train->arrival_time, 0, 5) }}</td>
                             <td>{{ $train->train_code }}</td>
                             <td>{{ $train->carriages_count }}</td>
-                            <td>{{ $train->on_time ? 'In orario' : 'In ritardo' }}</td>
-                            <td>{{ $train->canceled ? ' ' : 'Cancellato' }}</td>
+                            <td class="{{ $train->on_time ? 'bg-success' : 'bg-warning' }}">
+                                {{ $train->on_time ? 'In orario' : 'In ritardo' }}</td>
+                            <td class="{{ $train->canceled ? '' : 'bg-danger' }}">
+                                {{ $train->canceled ? ' ' : 'Cancellato' }}
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
